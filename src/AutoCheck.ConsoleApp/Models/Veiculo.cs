@@ -2,7 +2,7 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 {
     public abstract class Veiculo
     {
-        public Veiculo(string marca, string modelo, DateTime ano, decimal quilometragem)
+        public Veiculo(string marca, string modelo, int ano, double quilometragem)
         {
             Marca = marca;
             Modelo = modelo;
@@ -11,8 +11,8 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
         }
         public string Marca { get; set; }
         public string Modelo { get; set; }
-        public DateTime Ano { get; set; }
-        public decimal Quilometragem { get; set; }
+        public int Ano { get; set; }
+        public double Quilometragem { get; set; }
         public List<string> ItemVistoria = new List<string>(); 
 
         public void AdicionarItemVistoriado(string nome, string status)
@@ -22,7 +22,7 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 
         public virtual List<string> ObterChecklistObrigatorio()
         {
-            
+            Console.WriteLine();
         }
 
         public virtual void Preencher()
@@ -34,11 +34,12 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
             Modelo = Console.ReadLine();
 
             Console.WriteLine("Informe o ano: ");
-            Ano = Convert.ToDateTime(Console.ReadLine());
+            Ano = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Informe a quilometragem: ");
-            Quilometragem = Convert.ToDecimal(Console.ReadLine());
+            Quilometragem = Convert.ToDouble(Console.ReadLine());
         }
-    }
 
+        
+    }
 }
