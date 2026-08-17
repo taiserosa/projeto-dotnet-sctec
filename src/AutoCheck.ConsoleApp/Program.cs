@@ -5,23 +5,22 @@ ObterNumero obterNumero = new ObterNumero();
 
 Console.WriteLine("-=-=-=-= Bem-vindo ao AutoCheck! =-=-=-=-");
 
-Console.WriteLine("Informe a opção que deseja: ");
-Console.WriteLine("0 - Sair");
-Console.WriteLine("1 - Realizar Nova Vistoria");
-Console.WriteLine("2 - Exibir Relatório de Vendas");
 
-int opcao = obterNumero.ObterInt(Console.ReadLine());
 
 List<Veiculo> veiculosVistoriados = new List<Veiculo>();
 
 do
 {
+    Console.WriteLine("0 - Sair");
+    Console.WriteLine("1 - Realizar Nova Vistoria");
+    Console.WriteLine("2 - Exibir Relatório de Vendas");
+
+    int opcao = obterNumero.ObterInt("Informe a opção que deseja: ");
+    
     if (opcao == 1)
     {
-        Console.WriteLine("Informe o tipo de veículo: ");
         Console.WriteLine("1 - carro | 2 - moto | 3 - caminhão): ");
-
-        int tipoVeiculo = obterNumero.ObterInt(Console.ReadLine());
+        int tipoVeiculo = obterNumero.ObterInt("Informe o tipo de veículo: ");
 
         if (tipoVeiculo == 1)
         {

@@ -4,10 +4,10 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
     {
         public Veiculo(string marca, string modelo, int ano, double quilometragem)
         {
-            Marca = marca;
-            Modelo = modelo;
-            Ano = ano;
-            Quilometragem = quilometragem;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Ano = ano;
+            this.Quilometragem = quilometragem;
         }
         public string Marca { get; set; }
         public string Modelo { get; set; }

@@ -1,16 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 {
     public class Caminhao : Veiculo
     {
+        public Caminhao(string marca, string modelo, int ano, double quilometragem, int quantidadeEixos, double capacidadeCargaToneladas) : base(marca, modelo, ano, quilometragem)
+        {
+            this.QuantidadeEixos = quantidadeEixos;
+            this.CapacidadeCargaToneladas = capacidadeCargaToneladas;
+        }
         public int QuantidadeEixos { get; set; }
         public double CapacidadeCargaToneladas { get; set; }
 
-        public override void ChecklistObrigatorio()
+        public override List<string> ObterChecklistObrigatorio()
         {
             
         }
@@ -20,10 +20,8 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
             ObterNumero obterNumero = new ObterNumero();
             Console.WriteLine("=-=-=-=-= Vistoria de Caminhão =-=-=-=-=");
             base.Preencher();
-            Console.WriteLine("Informe a quantidade de eixos: ");
-            QuantidadeEixos = obterNumero.ObterInt(Console.ReadLine());
-            Console.WriteLine("Informe a capacidade de carga (em toneladas): ");
-            CapacidadeCargaToneladas = obterNumero.ObterDouble(Console.ReadLine());
+            QuantidadeEixos = obterNumero.ObterInt("Informe a quantidade de eixos: ");
+            CapacidadeCargaToneladas = obterNumero.ObterDouble("Informe a capacidade de carga (em toneladas): ");
         }
     }
 }
