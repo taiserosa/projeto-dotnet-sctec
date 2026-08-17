@@ -12,16 +12,25 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 
         public override List<string> ObterChecklistObrigatorio()
         {
-            
+            List<string> itensChecklist= new List<string>{"Estado da Suspensão", "Tacógrafo", "Sistema de Freio Pneumático"};
+            return itensChecklist;
         }
 
         public override void Preencher()
         {
-            ObterNumero obterNumero = new ObterNumero();
-            Console.WriteLine("=-=-=-=-= Vistoria de Caminhão =-=-=-=-=");
+            ObterEntrada obterNumero = new ObterEntrada();
+            Console.WriteLine("=-=-=-=-= VISTORIA DE CAMINHÃO =-=-=-=-=");
             base.Preencher();
             QuantidadeEixos = obterNumero.ObterInt("Informe a quantidade de eixos: ");
             CapacidadeCargaToneladas = obterNumero.ObterDouble("Informe a capacidade de carga (em toneladas): ");
+        }
+
+        public override void Imprimir()
+        {
+            base.Imprimir();
+            Console.WriteLine("> ATRIBUTOS(S) ESPECÍFICO(S)");
+            Console.WriteLine($"- Quantidade de eixos: {QuantidadeEixos}");
+            Console.WriteLine($"- Capacidade de carga (toneladas): {CapacidadeCargaToneladas}");
         }
     }
 }
