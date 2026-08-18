@@ -1,6 +1,8 @@
 ﻿using autocheck_dotnet.AutoCheck.ConsoleApp.Models;
+using autocheck_dotnet.Services;
 
 ObterEntrada obterEntrada = new ObterEntrada();
+MotorVistoria motorVistoria = new MotorVistoria();
 
 Console.WriteLine("-=-=-=-= Bem-vindo ao AutoCheck! =-=-=-=-");
 
@@ -18,43 +20,28 @@ do
     
     if (opcao == 1)
     {
-        Console.WriteLine("1 - carro | 2 - moto | 3 - caminhão): ");
+        Console.WriteLine("1 - Carro | 2 - Moto | 3 - Caminhão): ");
         int tipoVeiculo = obterEntrada.ObterInt("Informe o tipo de veículo: ");
 
         if (tipoVeiculo == 1)
         {
-            Carro novoCarro = new Carro();
-            novoCarro.Preencher();
-            foreach(var item in novoCarro.ObterChecklistObrigatorio())
-            {
-                Console.WriteLine("Informe BOM, REGULAR ou RUIM");
-                string status = obterEntrada.ObterString($"Informe o status do {item}: ");
-                novoCarro.AdicionarItemVistoriado(item, status);
-            }
-            veiculosVistoriados.Add(novoCarro);
+            Veiculo novoVeiculo = new Carro();
+            novoVeiculo.Preencher();
+            motorVistoria.RealizarVistoria(novoVeiculo);
+            veiculosVistoriados.Add(novoVeiculo);
 
         } else if (tipoVeiculo == 2) {
-            Moto novaMoto = new Moto();
-            novaMoto.Preencher();
-            foreach(var item in novaMoto.ObterChecklistObrigatorio())
-            {
-                Console.WriteLine("Informe BOM, REGULAR ou RUIM");
-                string status = obterEntrada.ObterString($"Informe o status do {item}: ");
-                novaMoto.AdicionarItemVistoriado(item, status);
-            }
-            veiculosVistoriados.Add(novaMoto);
+            Veiculo novoVeiculo = new Moto();
+            novoVeiculo.Preencher();
+            motorVistoria.RealizarVistoria(novoVeiculo);
+            veiculosVistoriados.Add(novoVeiculo);
 
         } else if (tipoVeiculo == 3)
         {
-            Caminhao novoCaminhao = new Caminhao();
-            novoCaminhao.Preencher();
-            foreach(var item in novoCaminhao.ObterChecklistObrigatorio())
-            {
-                Console.WriteLine("Informe BOM, REGULAR ou RUIM");
-                string status = obterEntrada.ObterString($"Informe o status do {item}: ");
-                novoCaminhao.AdicionarItemVistoriado(item, status);
-            }
-            veiculosVistoriados.Add(novoCaminhao);
+            Veiculo novoVeiculo = new Caminhao();
+            novoVeiculo.Preencher();
+            motorVistoria.RealizarVistoria(novoVeiculo);
+            veiculosVistoriados.Add(novoVeiculo);
 
         } else
         {
@@ -70,7 +57,7 @@ do
         {
             foreach (var item in veiculosVistoriados)
             {
-                item.ExibeRelatorioFinal();
+                motorVistoria.ExibeRelatorioFinal(item);
             }    
         }
         

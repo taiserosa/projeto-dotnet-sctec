@@ -2,6 +2,10 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 {
     public abstract class Veiculo
     {
+        public Veiculo()
+        {
+            
+        }
         public Veiculo(string marca, string modelo, int ano, double quilometragem)
         {
             this.Marca = marca;
@@ -52,14 +56,6 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
         }
 
 
-
-        public void RealizarVistoria()
-        {
-            
-        }
-
-
-
         public int CalculaPontuacao()
         {
             int pontuacao = 0;
@@ -87,47 +83,19 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
             return percentual;
         }
 
-        public void ClassificaVeiculo()
+        public string ClassificaVeiculo()
         {
             double percentual = CalculaPercentual();
             if (percentual <= 59)
             {
-                Console.WriteLine("Reprovado na Vistoria!");
+                return "Reprovado na Vistoria!";
             } else if (percentual >= 60 && percentual <= 89)
             {
-                Console.WriteLine("Aprovado com Apontamentos!");
-            } else if (percentual >= 90 && percentual <= 100)
+                return "Aprovado com Apontamentos!";
+            } else
             {
-                Console.WriteLine("Aprovado com Excelência!");
+                return "Aprovado com Excelência!";
             }
-        }
-
-        public void ExibePendencias()
-        {
-            if (VistoriaRealizada.Count == 0)
-            {
-                Console.WriteLine("Nenhuma pendência registrada!");
-            }
-            foreach(var item in VistoriaRealizada)
-            {
-                if (item.Status.ToUpper() == "REGULAR")
-                {
-                    Console.WriteLine($"{item.Nome} - {item.Status} - Item de Atenção!");
-                } else if (item.Status.ToUpper() == "RUIM")
-                {
-                    Console.WriteLine($"{item.Nome} - Status: {item.Status} - Item Crítico!");
-                }
-            }
-        }
-
-        public void ExibeRelatorioFinal()
-        {
-            Imprimir();
-            Console.WriteLine("");
-            CalculaPontuacao();
-            CalculaPercentual();
-            ClassificaVeiculo();
-            ExibePendencias();
         }
     }
 }

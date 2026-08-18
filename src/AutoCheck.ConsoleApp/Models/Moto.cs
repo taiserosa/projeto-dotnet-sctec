@@ -2,6 +2,10 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 {
     public class Moto : Veiculo
     {
+        public Moto()
+        {
+            
+        }
         public Moto(string marca, string modelo, int ano, double quilometragem, int cilindradas) : base( marca, modelo, ano, quilometragem)
         {
             this.Cilindradas = cilindradas;
