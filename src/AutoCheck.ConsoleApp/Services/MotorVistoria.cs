@@ -70,15 +70,18 @@ namespace autocheck_dotnet.Services
             {
                 if (item.Status.ToUpper() == "BOM")
                 {
-                    Console.WriteLine($"[OK] {item.Nome} ------ Status: {item.Status} (10 pontos)");
+                    Console.WriteLine($"[OK] {item.Nome} -------- Status: {item.Status} (10 pontos)");
+                    Console.WriteLine();
                 }
                 else if (item.Status.ToUpper() == "REGULAR")
                 {
-                    Console.WriteLine($"[!] {item.Nome} ------- Status: {item.Status} (5 pontos)");
+                    Console.WriteLine($"[!] {item.Nome} --------- Status: {item.Status} (5 pontos)");
+                    Console.WriteLine();
                 }
                 else
                 {
-                    Console.WriteLine($"[X] {item.Nome} ------- Status: {item.Status} (0 pontos)");
+                    Console.WriteLine($"[X] {item.Nome} --------- Status: {item.Status} (0 pontos)");
+                    Console.WriteLine();
                 }
             }
         }
@@ -238,22 +241,24 @@ namespace autocheck_dotnet.Services
                     contRuim += 1;
                     if (contRuim == 1)
                     {
-                        Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
                         Console.WriteLine("=-=-=-=- ITENS CRÍTICOS / REPROVADOS (AÇÃO IMEDIATA) -=-=-=-=");
-                        
+                        Console.WriteLine();
                     }
                     ObterRecomendacao(item);
+                    Console.WriteLine();
+
                 }
                 else if (item.Status.ToUpper() == "REGULAR")
                 {
                     contRegular += 1;
                     if (contRegular == 1)
                     {
-                        Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
                         Console.WriteLine("-=-=-=-=-=- ITENS DE ATENÇÃO (REVISÃO PREVENTIVA) -=-=-=-=-=-");
-
-                    }
+                        Console.WriteLine();
+                    }  
                     ObterRecomendacao(item);
+                    Console.WriteLine();
+
                 }
             }
             if (contRuim == 0 && contRegular == 0)
@@ -268,10 +273,12 @@ namespace autocheck_dotnet.Services
             Console.WriteLine();
             
             veiculo.Imprimir();
-            
+
+            Console.WriteLine();
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.WriteLine($"-=-=-=-= AVALIAÇÃO DOS ITENS INSPECIONADOS ({veiculo.VistoriaRealizada.Count} itens) =-=-=-=-");
-            
+            Console.WriteLine();
+
             AvaliaItens(veiculo);
 
             Console.WriteLine();
@@ -280,13 +287,18 @@ namespace autocheck_dotnet.Services
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=- RESUMO DA PONTUAÇÃO -=-=-=-=-=-=-=-=-=-");
 
             Console.WriteLine($"- Pontuação Atingida: {CalculaPontuacao(veiculo)} de {veiculo.VistoriaRealizada.Count * 10} pontos possíveis");
-            Console.WriteLine($"- Percentual de Aprovação: {CalculaPercentual(veiculo):F2}%");
-            Console.WriteLine($"- Classificação Final: [{ClassificaVeiculo(veiculo)}]");
+            Console.WriteLine();
 
+            Console.WriteLine($"- Percentual de Aprovação: {CalculaPercentual(veiculo):F2}%");
+            Console.WriteLine();
+            
+            Console.WriteLine($"- Classificação Final: [{ClassificaVeiculo(veiculo)}]");
             Console.WriteLine();
 
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.WriteLine("-=-=- RELATÓRIO DE MANUTENÇÃO E RECOMENDAÇÕES DA OFICINA -=-=-");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            Console.WriteLine();
 
             ExibePendencias(veiculo);
         }

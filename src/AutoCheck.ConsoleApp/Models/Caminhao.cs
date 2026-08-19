@@ -28,16 +28,17 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=- VISTORIA DE CAMINHÃO -=-=-=-=-=-=-=-=-=-");
             base.Preencher();
-            QuantidadeEixos = obterEntrada.ObterInt("Informe a quantidade de eixos: ");
-            CapacidadeCargaToneladas = obterEntrada.ObterDouble("Informe a capacidade de carga (em toneladas): ");
+            QuantidadeEixos = obterEntrada.ObterInt("- Informe a quantidade de eixos: ");
+            CapacidadeCargaToneladas = obterEntrada.ObterDouble("- Informe a capacidade de carga (em toneladas): ");
         }
 
         public override void Imprimir()
         {
             Console.WriteLine($"-=-=-=-=-=-=-=-=-=-=- DADOS DO CAMINHÃO -=--=-=-=-=-=-=-=-=-");
             base.Imprimir();
-            Console.WriteLine("> ATRIBUTOS(S) ESPECÍFICO(S)");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=- ATRIBUTOS ESPECÍFICOS -=-=-=-=-=-=-=-=-=-");
             Console.WriteLine($"- Quantidade de eixos: {QuantidadeEixos}");
+            Console.WriteLine();
             Console.WriteLine($"- Capacidade de carga (toneladas): {CapacidadeCargaToneladas}");
         }
     }

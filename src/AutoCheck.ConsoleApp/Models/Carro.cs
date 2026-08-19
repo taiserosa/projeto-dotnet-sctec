@@ -26,14 +26,14 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=- Vistoria de Carro -=-=-=-=-=-=-=-=-=-=-");
             base.Preencher();
-            QuantidadePortas = obterEntrada.ObterInt("Informe a quantidade de portas: ");
+            QuantidadePortas = obterEntrada.ObterInt("- Informe a quantidade de portas: ");
         }
 
         public override void Imprimir()
         {
-            Console.WriteLine($"-=-=-=-=-=-=-=-=-=-=-=- DADOS DO CARRO -=-=-=-=-=-=-=-=-=-=-");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=- DADOS DO CARRO -=-=-=-=-=-=-=-=-=-=-");
             base.Imprimir();
-            Console.WriteLine("> ATRIBUTOS(S) ESPECÍFICO(S)");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=- ATRIBUTO ESPECÍFICO -=-=-=-=-=-=-=-=-=-");
             Console.WriteLine($"- Quantidade de portas: {QuantidadePortas}");
         }
     }

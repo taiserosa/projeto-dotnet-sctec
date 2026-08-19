@@ -32,7 +32,7 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
         {
             Console.WriteLine($"-=-=-=-=-=-=-=-=--=-=- DADOS DA MOTO -=-=-=-=-=-=-=-=-=-=-=-");
             base.Imprimir();
-            Console.WriteLine("> ATRIBUTOS(S) ESPECÍFICO(S)");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=- ATRIBUTO ESPECÍFICO -=-=-=-=-=-=-=-=-=-");
             Console.WriteLine($"- Cilindradas: {Cilindradas}");
         }
     }

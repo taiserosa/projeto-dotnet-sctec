@@ -5,7 +5,7 @@ ObterEntrada obterEntrada = new ObterEntrada();
 MotorVistoria motorVistoria = new MotorVistoria();
 
 Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-Console.WriteLine("-=-=-=-=-=-=-=-=- Bem-vindo ao AutoCheck! -=-=-=-=-=-=-=-=-=-");
+Console.WriteLine("-=-=-=-=- Bem-vindo ao AutoCheck: Vistoria Veicular! -=-=-=-=-");
 
 int opcao;
 
@@ -58,8 +58,10 @@ do
         
     } else if (opcao == 2)
     {
+        Console.WriteLine();
         Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         Console.WriteLine("-=-=-=-=-=-=-=-=-=- RELATÓRIO DAS VISTORIAS -=-=-=-=-=-=-=-=-");
+        Console.WriteLine();
 
         if (veiculosVistoriados.Count == 0)
         {

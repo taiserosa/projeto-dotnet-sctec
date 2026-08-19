@@ -47,8 +47,11 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
         public virtual void Imprimir()
         {
             Console.WriteLine($"- Marca: {Marca}");
+            Console.WriteLine();
             Console.WriteLine($"- Modelo: {Modelo}");
+            Console.WriteLine();
             Console.WriteLine($"- Ano: {Ano}");
+            Console.WriteLine();
             Console.WriteLine($"- Quilometragem: {Quilometragem}");            
         }
     }
