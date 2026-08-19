@@ -14,20 +14,24 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 
         public override List<string> ObterChecklistObrigatorio() 
         {
-            List<string> itensChecklist= new List<string>{"Macaco e Chave de Roda", "Funcionamento dos Airbags", "Funcionamento do Ar-condicionado"};
-            return itensChecklist;
+            List<string> itensPai = base.ObterChecklistObrigatorio();
+            List<string> itens = new List<string>{"Macaco e Chave de Roda", "Funcionamento dos Airbags", "Funcionamento do Ar-condicionado"};
+            itensPai.AddRange(itens);
+            return itensPai;
         }
 
         public override void Preencher()
         {
-            ObterEntrada obterNumero = new ObterEntrada();
-            Console.WriteLine("=-=-=-=-= Vistoria de Carro =-=-=-=-=");
+            ObterEntrada obterEntrada = new ObterEntrada();
+
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=- Vistoria de Carro -=-=-=-=-=-=-=-=-=-=-");
             base.Preencher();
-            QuantidadePortas = obterNumero.ObterInt("Informe a quantidade de portas: ");
+            QuantidadePortas = obterEntrada.ObterInt("Informe a quantidade de portas: ");
         }
 
         public override void Imprimir()
         {
+            Console.WriteLine($"-=-=-=-=-=-=-=-=-=-=-=- DADOS DO CARRO -=-=-=-=-=-=-=-=-=-=-");
             base.Imprimir();
             Console.WriteLine("> ATRIBUTOS(S) ESPECÍFICO(S)");
             Console.WriteLine($"- Quantidade de portas: {QuantidadePortas}");

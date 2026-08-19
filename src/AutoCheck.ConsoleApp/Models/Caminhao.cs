@@ -16,21 +16,25 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 
         public override List<string> ObterChecklistObrigatorio()
         {
-            List<string> itensChecklist= new List<string>{"Estado da Suspensão", "Tacógrafo", "Sistema de Freio Pneumático"};
-            return itensChecklist;
+            List<string> itensPai = base.ObterChecklistObrigatorio();
+            List<string> itens = new List<string>{"Estado da Suspensão", "Tacógrafo", "Sistema de Freio Pneumático"};
+            itensPai.AddRange(itens);
+            return itensPai;
         }
 
         public override void Preencher()
         {
-            ObterEntrada obterNumero = new ObterEntrada();
-            Console.WriteLine("=-=-=-=-= VISTORIA DE CAMINHÃO =-=-=-=-=");
+            ObterEntrada obterEntrada = new ObterEntrada();
+
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=- VISTORIA DE CAMINHÃO -=-=-=-=-=-=-=-=-=-");
             base.Preencher();
-            QuantidadeEixos = obterNumero.ObterInt("Informe a quantidade de eixos: ");
-            CapacidadeCargaToneladas = obterNumero.ObterDouble("Informe a capacidade de carga (em toneladas): ");
+            QuantidadeEixos = obterEntrada.ObterInt("Informe a quantidade de eixos: ");
+            CapacidadeCargaToneladas = obterEntrada.ObterDouble("Informe a capacidade de carga (em toneladas): ");
         }
 
         public override void Imprimir()
         {
+            Console.WriteLine($"-=-=-=-=-=-=-=-=-=-=- DADOS DO CAMINHÃO -=--=-=-=-=-=-=-=-=-");
             base.Imprimir();
             Console.WriteLine("> ATRIBUTOS(S) ESPECÍFICO(S)");
             Console.WriteLine($"- Quantidade de eixos: {QuantidadeEixos}");

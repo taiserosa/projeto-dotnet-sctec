@@ -33,69 +33,23 @@ namespace autocheck_dotnet.AutoCheck.ConsoleApp.Models
 
         public virtual void Preencher()
         {
-            Console.WriteLine("Informe a marca: ");
-            Marca = Console.ReadLine();
+            ObterEntrada obterEntrada = new ObterEntrada();
 
-            Console.WriteLine("Informe o modelo: ");
-            Modelo = Console.ReadLine();
+            Marca = obterEntrada.ObterString("- Informe a marca: ");
 
-            Console.WriteLine("Informe o ano: ");
-            Ano = Convert.ToInt32(Console.ReadLine());
+            Modelo = obterEntrada.ObterString("- Informe o modelo: ");
 
-            Console.WriteLine("Informe a quilometragem: ");
-            Quilometragem = Convert.ToDouble(Console.ReadLine());
+            Ano = obterEntrada.ObterInt("- Informe o ano: ");
+
+            Quilometragem = obterEntrada.ObterDouble("- Informe a quilometragem: ");
         }
 
         public virtual void Imprimir()
         {
-            Console.WriteLine($"=-=-=-=-=-= DADOS DO VEÍCULO =-=-=-=-=");
             Console.WriteLine($"- Marca: {Marca}");
             Console.WriteLine($"- Modelo: {Modelo}");
             Console.WriteLine($"- Ano: {Ano}");
             Console.WriteLine($"- Quilometragem: {Quilometragem}");            
-        }
-
-
-        public int CalculaPontuacao()
-        {
-            int pontuacao = 0;
-            foreach (var item in VistoriaRealizada)
-            {
-                if (item.Status.ToUpper() == "BOM")
-                {
-                    pontuacao += 10;
-                } else if (item.Status.ToUpper() == "REGULAR")
-                {
-                    pontuacao += 5;
-                } 
-            } 
-            return pontuacao;   
-        }
-
-        public double CalculaPercentual()
-        {
-            int totalItens = 0;
-            foreach (var item in VistoriaRealizada)
-            {
-                totalItens += 1;
-            }
-            double percentual = (double)CalculaPontuacao() / (double)(totalItens * 10)  * 100;
-            return percentual;
-        }
-
-        public string ClassificaVeiculo()
-        {
-            double percentual = CalculaPercentual();
-            if (percentual <= 59)
-            {
-                return "Reprovado na Vistoria!";
-            } else if (percentual >= 60 && percentual <= 89)
-            {
-                return "Aprovado com Apontamentos!";
-            } else
-            {
-                return "Aprovado com Excelência!";
-            }
         }
     }
 }
