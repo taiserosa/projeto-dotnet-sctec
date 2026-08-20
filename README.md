@@ -51,9 +51,9 @@ Se a opção 0 for escolhida, será exibida uma mensagem de despedida e o progra
 
 A aplicação funciona diretamente pelo terminal, permitindo realizar as vistorias, consultar os relatórios e validar as entradas informadas pelo usuário.
 
-Exemplo da aplicação em funcionamento:
+Exemplo de relatório das vistorias da aplicação:
 
-![Imagem do terminal com o relatório de vistorias feitas](/img/Captura%20de%20tela%202026-08-19%20142832.png)
+![Imagem do terminal com o relatório de vistorias feitas](/img/menu-relatorio-autoCheck.png)
 
 ---
 
@@ -119,7 +119,7 @@ A arquitetura cliente-servidor existe em aplicações web ou que interagem com A
 
 ## 🎥 Link do vídeo de apresentação
 
-🔗 [Vídeo de apresentação do AutoCheck](link)
+🔗 [Vídeo de apresentação do AutoCheck](https://drive.google.com/file/d/1aKAD56j2PQQEajhVRlpAy7qSOShTI7yL/view?usp=sharing)
 
 ---
 
