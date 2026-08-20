@@ -27,7 +27,7 @@ do
         do
         {
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-            Console.WriteLine("1 - Carro | 2 - Moto | 3 - Caminhão): ");
+            Console.WriteLine("1 - Carro | 2 - Moto | 3 - Caminhão");
             tipoVeiculo = obterEntrada.ObterInt("- Informe o tipo de veículo (1, 2 ou 3): ");
 
             if (tipoVeiculo == 1)
