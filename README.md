@@ -1,4 +1,4 @@
-🚗 AutoCheck: Sistema de Vistoria Veicular
+# 🚗 AutoCheck: Sistema de Vistoria Veicular
 
 O AutoCheck: Sistema de Vistoria Veicular foi desenvolvido como um projeto para pôr em prática os conceitos aprendidos no Módulo 1 do curso de Desenvolvimento Back-end .NET do Programa SCTEC.
 
@@ -6,15 +6,16 @@ Nessa fase do curso, aprendi desde a base da linguagem de programação C#, como
 
 ---
 
-🔎 O que o sistema faz e para que serve?
+## 🔎 O que o sistema faz e para que serve?
 
 O sistema visa verificar se um veículo (carro, moto ou caminhão) está em boas condições para que uma concessionária, locadora de veículos ou seguradora se certifiquem do estado do veículo antes de fecharem negócio.
 
-No primeiro momento, o usuário deverá escolher:
+No primeiro momento, o usuário deverá digitar:
 
-1 — Realizar uma vistoria
-2 — Ver relatório
-0 — Sair
+* 1 -> Realizar uma vistoria
+* 2 -> Ver relatório
+* 0 -> Sair
+
 🛠️ Realizando uma vistoria
 
 Se a opção 1 for escolhida, o programa pede que o usuário escolha um dentre os três tipos de veículos possíveis, preencha seus atributos (marca, modelo, ano, quilometragem, dentre outros específicos de cada veículo) e, após isso, informe "Bom", "Regular" ou "Ruim" para cada um dos itens a serem inspecionados, como:
@@ -46,17 +47,17 @@ Se a opção 0 for escolhida, será exibida uma mensagem de despedida e o progra
 
 ---
 
-🖥️ Aplicação em funcionamento
+## 🖥️ Aplicação em funcionamento
 
 A aplicação funciona diretamente pelo terminal, permitindo realizar as vistorias, consultar os relatórios e validar as entradas informadas pelo usuário.
 
-Exemplo da aplicação sendo executada:
+Exemplo da aplicação em funcionamento:
 
-<!-- Adicione aqui o print da aplicação -->
+![Imagem do terminal com o relatório de vistorias feitas](/img/Captura%20de%20tela%202026-08-19%20142832.png)
 
 ---
 
-⚙️ Como executá-lo, passo a passo, do zero?
+## ⚙️ Como executá-lo, passo a passo, do zero?
 
 Este projeto poderá ser executado por qualquer pessoa, contanto que siga os seguintes passos:
 
@@ -68,7 +69,7 @@ Então, digite dotnet run e o programa irá rodar.
 
 ---
 
-🧮 Qual regra de cálculo da compatibilidade eu adotei e por quê?
+## 🧮 Qual regra de cálculo da compatibilidade eu adotei e por quê?
 
 A regra de cálculo utilizada nessa aplicação para definir o percentual de aprovação foi a seguinte:
 
@@ -80,7 +81,7 @@ Esse cálculo expressa uma pontuação justa, se baseando no total de itens insp
 
 ---
 
-📚 Qual critério eu usei para priorizar as habilidades na recomendação de estudo?
+## 📚 Qual critério eu usei para priorizar as habilidades na recomendação de estudo?
 
 No início, foi um pouco difícil priorizar o que fazer primeiro, mas aos poucos consegui pegar o ritmo.
 
@@ -92,7 +93,7 @@ Fiz vários testes durante o desenvolvimento e, ao final, também.
 
 ---
 
-💻 Quais conceitos do Módulo 01 do curso eu apliquei e onde?
+## 💻 Quais conceitos do Módulo 01 do curso eu apliquei e onde?
 
 Aprendi diversas coisas no Módulo 1 do curso e tentei aplicar o máximo delas nesse sistema.
 
@@ -104,7 +105,7 @@ Além disso, usei diversas vezes if, else if e else para decidir qual caminho se
 
 ---
 
-🌐 O que é a arquitetura cliente-servidor e como ela aparece no meu projeto?
+## 🌐 O que é a arquitetura cliente-servidor e como ela aparece no meu projeto?
 
 A arquitetura cliente-servidor se baseia em requests (pedidos) e responses (respostas).
 
@@ -116,19 +117,19 @@ A arquitetura cliente-servidor existe em aplicações web ou que interagem com A
 
 ---
 
-🎥 Link do vídeo de apresentação
+## 🎥 Link do vídeo de apresentação
 
-🔗 Vídeo de apresentação do AutoCheck
-
----
-
-🧰 Tecnologias utilizadas
-C#
-.NET
-Visual Studio Code
-Git
-GitHub
+🔗 [Vídeo de apresentação do AutoCheck](link)
 
 ---
 
-Desenvolvido como projeto do Módulo 1 — Desenvolvimento Back-end .NET | Programa SCTEC
+## 🧰 Tecnologias utilizadas
+* C#
+* .NET
+* Visual Studio Code
+* Git
+* GitHub
+
+---
+
+## Desenvolvido como projeto do Módulo 1 - Desenvolvimento Back-end .NET | Programa SCTEC
